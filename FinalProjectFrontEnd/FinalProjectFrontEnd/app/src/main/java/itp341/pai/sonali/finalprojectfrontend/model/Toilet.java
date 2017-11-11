@@ -11,20 +11,21 @@ import java.util.ArrayList;
 public class Toilet {
 
     //data members
-    private String nameOfLocation;
+    private long bathroomId;
+    private String name;
     private String description;
     private String address;
     private boolean hasDisabilityAccomodations;
 
     public Toilet(String nameOfLocation, String description, String address, boolean hadDisabilityAccomodations) {
-        this.nameOfLocation = nameOfLocation;
+        this.name = nameOfLocation;
         this.description = description;
         this.address = address;
         this.hasDisabilityAccomodations = hadDisabilityAccomodations;
     }
 
     public String getNameOfLocation() {
-        return nameOfLocation;
+        return name;
     }
 
     public String getDescription() {
@@ -36,7 +37,7 @@ public class Toilet {
     }
 
     public void setNameOfLocation(String nameOfLocation) {
-        this.nameOfLocation = nameOfLocation;
+        this.name = nameOfLocation;
     }
 
     public void setDescription(String description) {
