@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#ffffff">
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="180dp" >
+
+    <fragment
+        android:id="@+id/fetchaddressMap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:name="com.google.android.gms.maps.SupportMapFragment" />
+    </FrameLayout>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text = "Name of Location"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd = "30dp"
+        android:layout_marginTop = "200dp"
+        android:id = "@+id/locationName"
+        android:layout_centerHorizontal="true" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd = "30dp"
+        android:layout_marginTop = "20dp"
+        android:id = "@+id/addressField"
+        android:text = "address will show up here when location selected on google maps"
+        android:layout_below = "@id/locationName"/>
+    <Button
+        android:layout_width="80dp"
+        android:layout_marginTop = "25dp"
+        android:layout_height="wrap_content"
+        android:text = "Disabled Access"
+        android:id = "@+id/disabledAccess"
+        android:textColor = "#000000"
+        android:background="#ffffff"
+        android:layout_marginStart = "50dp"
+        android:layout_below = "@id/addressField"/>
+    <Button
+        android:layout_width="80dp"
+        android:layout_marginTop = "25dp"
+        android:layout_height="wrap_content"
+        android:text = "Requires Key"
+        android:id = "@+id/requiresKey"
+        android:textColor = "#000000"
+        android:background="#ffffff"
+        android:layout_toEndOf="@id/disabledAccess"
+        android:layout_marginStart = "50dp"
+        android:layout_below = "@id/addressField"/>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="29dp"
+        android:textColor="@android:color/background_dark"
+        android:background="#ffffff"
+        android:text="ADD TOILET"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
