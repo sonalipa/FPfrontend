@@ -25,8 +25,11 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 
+import javax.xml.stream.Location;
+
 import itp341.pai.sonali.finalprojectfrontend.model.GET_HTTP;
 import itp341.pai.sonali.finalprojectfrontend.model.Toilet;
+import sun.applet.Main;
 
 
 public class ListActivity {
@@ -36,7 +39,8 @@ public class ListActivity {
     private ArrayAdapter<Toilet> adapter;
     private Toilet toilet;
     private List<Toilet> toilets;
-
+    static final int DETAIL_INTENT_CONSTANT = 0;
+    static final int ADD_TOILET_INTENT_CONSTANT = 1;
     public ListActivity() {
         // Required empty public constructor
     }
@@ -52,6 +56,7 @@ public class ListActivity {
 
         //get all toilets close to location and load into the adapter
         //Loction location = CURRENT LOCATION OF USER USING GOOGLE MAPS API
+        Location location = null; //comment this line out
         try {
             URL url = new URL("http://localhost:8080/FinalProject/BathroomGPSServlet?location=" + location);
             GET_HTTP get_http = new GET_HTTP(url);
@@ -72,9 +77,9 @@ public class ListActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 //get the clicked bathroom's ID and pass it over to the detail activity in an intent
                 Intent detailIntent = new Intent(context, DetailActivity.class);
-                long id = toilets.get(position).getBathroomId();
+                long id = toilests.get(position).getBathroomId();
                 detailIntent.putExtra("bathroomId", id);
-                startActivityForResult(detailIntent, 0);
+                startActivityForResult(detailIntent, DETAIL_INTENT_CONSTANT);
             }
         });
 
@@ -84,7 +89,7 @@ public class ListActivity {
             @Override
             public void onClick(View view) {
                 Intent addToiletIntent = new Intent(context, AddToiletActivity.class);
-                startActivityForResult(addToiletIntent, 1);
+                startActivityForResult(addToiletIntent, ADD_TOILET_INTENT_CONSTANT);
             }
         });
 

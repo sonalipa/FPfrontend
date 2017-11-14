@@ -3,6 +3,7 @@ package itp341.pai.sonali.finalprojectfrontend.model;
 import android.media.Image;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Sonali Pai on 11/8/2017.
@@ -16,7 +17,7 @@ public class Toilet {
     private String description;
     private String address;
     private boolean hasDisabilityAccomodations;
-
+    private List<Comment> comments;
     public Toilet(String nameOfLocation, String description, String address, boolean hadDisabilityAccomodations) {
         this.name = nameOfLocation;
         this.description = description;
@@ -24,6 +25,7 @@ public class Toilet {
         this.hasDisabilityAccomodations = hadDisabilityAccomodations;
     }
 
+    public List<Comment> getComments(){return comments;}
     public long getBathroomId() {
         return bathroomId;
     }

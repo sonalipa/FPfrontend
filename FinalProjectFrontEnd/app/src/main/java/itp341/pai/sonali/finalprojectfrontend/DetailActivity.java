@@ -64,7 +64,7 @@ public class DetailActivity extends AppCompatActivity {
 
         bathroomNameView = (TextView) findViewById(R.id.toilet_name);
         bathroomNameView.setText(bathroom.getNameOfLocation());
-        bathroomDescView = (TextView) findViewById(R.id.toilet_description);
+       // bathroomDescView = (TextView) findViewById(R.id.toilet_description);
         bathroomNameView.setText(bathroom.getDescription());
         commentsView = (ListView) findViewById(R.id.comments);
         List<Comment> comments = bathroom.getComments();
