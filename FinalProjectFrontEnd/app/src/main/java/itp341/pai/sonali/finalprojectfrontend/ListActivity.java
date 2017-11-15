@@ -77,7 +77,7 @@ public class ListActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 //get the clicked bathroom's ID and pass it over to the detail activity in an intent
                 Intent detailIntent = new Intent(context, DetailActivity.class);
-                long id = toilests.get(position).getBathroomId();
+                long id = toilets.get(position).getBathroomId();
                 detailIntent.putExtra("bathroomId", id);
                 startActivityForResult(detailIntent, DETAIL_INTENT_CONSTANT);
             }
